@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+</head>
+<body>
+    <button id="btn">点击获取后端文字</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function () {
+            fetch('http://127.0.0.1:5000/api/w')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = data.number;
+                })
+                .catch(error => {
+                    document.getElementById('result').innerText = '请求失败：' + error;
+                });
+        });
+    </script>
+</body>
+</html>
