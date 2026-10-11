@@ -10,7 +10,7 @@
 
     <script>
         document.getElementById('btn').addEventListener('click', function () {
-            fetch('http://127.0.0.1:5000/api/w')
+            fetch('https://blok-3ap32jv.maozi.io/api/w')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('result').innerText = data.number;
